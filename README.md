@@ -81,6 +81,5 @@ The build runs reward parsing, item appearance, audio, reel outcome, animation t
 - Reel concept inspired by [Scatha-Pro](https://github.com/NamelessJu/Scatha-Pro). Its code and textures are not included.
 - Item appearance data comes from the [Hypixel item resource](https://api.hypixel.net/v2/resources/skyblock/items).
 - Resource-pack compatibility was checked against [Catharsis](https://github.com/meowdding/catharsis) and [FurfSky Reborn](https://github.com/furfsky/reborn).
-- Build setup is based on the [Fabric example mod](https://github.com/FabricMC/fabric-example-mod/tree/26.1.2). The Gradle wrapper retains its upstream license notices.
 
 Nucleus Reel is licensed under [MIT](LICENSE).

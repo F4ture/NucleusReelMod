@@ -1,0 +1,107 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version '1.19.3'
+}
+
+repositories { mavenCentral() }
+
+loom {
+    splitEnvironmentSourceSets()
+    mods {
+        'nucleusreel' {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:26.1.2'
+    implementation 'net.fabricmc:fabric-loader:0.19.3'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.155.2+26.1.2'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand 'version': project.version }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar { from('LICENSE') }
+
+tasks.register('parserTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.LootParserTest'
+    enableAssertions = true
+}
+// Regression tests have their own dependency-free Java runner above.
+test { failOnNoDiscoveredTests = false }
+check.dependsOn parserTest
+
+sourceSets.test.compileClasspath += sourceSets.client.output + sourceSets.client.compileClasspath
+sourceSets.test.runtimeClasspath += sourceSets.client.output + sourceSets.client.runtimeClasspath
+tasks.register('appearanceAudioTest', JavaExec) {
+    dependsOn testClasses, clientClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.AppearanceAudioTest'
+    enableAssertions = true
+}
+check.dependsOn appearanceAudioTest
+
+tasks.register('slotSpinTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.SlotSpinTest'
+    enableAssertions = true
+}
+check.dependsOn slotSpinTest
+
+tasks.register('slotOutcomeTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.SlotOutcomeTest'
+    enableAssertions = true
+}
+check.dependsOn slotOutcomeTest
+
+tasks.register('finaleTimelineTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.FinaleTimelineTest'
+    enableAssertions = true
+}
+check.dependsOn finaleTimelineTest
+
+tasks.register('cabinetFractureTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.CabinetFractureTest'
+    enableAssertions = true
+}
+check.dependsOn cabinetFractureTest
+
+tasks.register('bonusTest', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.core.BonusTest'
+    enableAssertions = true
+}
+check.dependsOn bonusTest
+
+tasks.register('commandTest', JavaExec) {
+    dependsOn testClasses, clientClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.nucleusreel.CommandTest'
+    enableAssertions = true
+}
+check.dependsOn commandTest

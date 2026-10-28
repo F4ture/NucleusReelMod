@@ -1,0 +1,627 @@
+[
+  {
+    "id": "DIVAN_ALLOY",
+    "name": "Divan's Alloy",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/divans_alloy",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PET_ITEM_QUICK_CLAW",
+    "name": "Quick Claw",
+    "material": "player_head",
+    "itemModel": null,
+    "tier": "LEGENDARY",
+    "glowing": false,
+    "skinValue": "ewogICJ0aW1lc3RhbXAiIDogMTcyMDA0MjcwODkzOCwKICAicHJvZmlsZUlkIiA6ICI4ZjE5NjJmYzE4NzY0MDU3ODYxMmIxMzNjODE4YmY5OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJOaW9uXzkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjMxMmE1YTEyZWNiMjRkNjg1MmRiMzg4ZTZhMzQ3MjFjYzY3ZjUyMmNjZGU3ZTgyNGI5Zjc1ZTk1MDM2YWM5MyIKICAgIH0KICB9Cn0=",
+    "skinSignature": "jVSRfNjGMmW92rIu173wUWePEWXSzx7y+6AMDGuUjKG8mXN2DLfINzrYuABovc7v3+dG//duti8X3KhqUQiMIKjK+EPUryU3jSZ8pb4EX1SLBTDX6KpxWDXsEteq6XobfmdOQ1bW5DIvvtsnOLQ7kMiONRZjqGYkfnekju9dPX9RlC5D0XVu5whRCKlZ7Vm1vpdPxFWwDpQD4U9okcJKiCnedMRN8IzY9898d5Vh+acTLW3Y3zlQs3YpHJ9+14gozIWrEfp51EVhj1cXBOFwDjAlJwgbtvvujSIqLe0qKpi7idikO4oRg8wPOC93PGWBMYJ8vNTirXTkq/mkSkc2GnV7ABM4U6EgckpugVEECDjT5klJCf+7y749roy7nyMBaCNqYs409O8JWTD42DHZQ+YkESPdfJCNkG6VlDDrCOSe/trYLGzBz7C4ZbM2owWUzNdR/+5oQLch+/4sjim8deSNIEy4mQWc8DsSu2vcTDMqTWNMB8uz7JXD+QeDDFnR4BdQNRyN/Zq9VSaTim2qZh8dhr2nW4Tn09aX8eR1L3jbl86BaaV47i3bkhzWgc69lgJWqsS/s4GsEMtpU2XvIkYrxuIW2Ifv3X9s0UGHFaelP6jPZqqD/9gmHtsjBwYSThRIZ0638fPMxUDEfOYorueXaUg7jBxvabT3EX5D/SU="
+  },
+  {
+    "id": "DIVAN_FRAGMENT",
+    "name": "Divan Fragment",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/divan_fragment",
+    "tier": "EPIC",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "JADERALD",
+    "name": "Jaderald",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/reforge_stones/jaderald",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GEMSTONE_MIXTURE",
+    "name": "Gemstone Mixture",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/gemstone_mixture",
+    "tier": "RARE",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "HELIX",
+    "name": "Helix Fossil",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/glacite/fossils/helix_fossil",
+    "tier": "LEGENDARY",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "CLAW_FOSSIL",
+    "name": "Claw Fossil",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/glacite/fossils/claw_fossil",
+    "tier": "LEGENDARY",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PRECIOUS_PEARL",
+    "name": "Precious Pearl",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/power_stones/precious_pearl",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PREHISTORIC_EGG",
+    "name": "Prehistoric Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/prehistoric_egg",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "BOB_OMB",
+    "name": "Bob-omb",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/bob_omb",
+    "tier": "RARE",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "RECALL_POTION",
+    "name": "Recall Potion",
+    "material": "player_head",
+    "itemModel": null,
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": "ewogICJ0aW1lc3RhbXAiIDogMTYxMDA1MDI4OTA2MSwKICAicHJvZmlsZUlkIiA6ICJlZDUzZGQ4MTRmOWQ0YTNjYjRlYjY1MWRjYmE3N2U2NiIsCiAgInByb2ZpbGVOYW1lIiA6ICI0MTQxNDE0MWgiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWFmODE1MWRlYjM5NTUzMjkyYjlhNjk2NzQ4MzJkZGE4MDAxNzgwY2E5ODE4MGEwNmVhZjliMzY4OTMwYjViYiIKICAgIH0KICB9Cn0=",
+    "skinSignature": "vk+6stUM8ra4biJ9W37kHmnIhufYk1iuki1R9CElFUKH7Or4p9pm4iU5ppLdgGm7hV2+M5V8wheEJbYdlCg7Wvk2Dm+51VGTmtMeoic8b8TNbPgmI28EMgrO663SGDbqdpxVVNQ0M6AG0vfei02OssQpJy2WPghNBVhgIFZp62UwDp1eWuhS8EwLIdDwJsU3zZNjE0mPENoX2xB7HXf2vac/cZ79dnFyHDs/LBVo2TCg8Ywo/BPpDNQTPehDeDZFawh4MZnmobLHSyPgZGZlo5oXOQKl/6dj2M+PG/HwwUdGuTV3gPoqNNExoWYNhL8Ja+t1M6WFi7KERb0YIlXZJWMtCa+O/GrfNamA9IToxe6a1HGvEjh/itsPuRyy9v2Gc3PkoqL+brrwjGCuF2zFHKS8fYtaR42xFaF00BvBQVb33CvN61xE1sR9e0EsrXKzjuLoSKApoAf1BqVppSl82agIaH7yIWmXOPOVw2qJkEn1jAi8NAJXX+q3dvgZE451Fh33F8DlSrraKWj2fKbhQ7BG9udef1GL7rhqUWhwWeKBDwghjffIJ/BN12hLFnrLOHyfcOt+dkYOoh6SHKx1giU7oVCimj5Tu4d0hcR7/CZJCO/c3mV9o4dKZeTGTYBcXgt9G961nOrNdyrHci/tSd5yLBiWJRY+SVfKcWjvx2M="
+  },
+  {
+    "id": "OIL_BARREL",
+    "name": "Oil Barrel",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/oil_barrel",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PICKONIMBUS",
+    "name": "Pickonimbus 2000",
+    "material": "diamond_pickaxe",
+    "itemModel": "hypixel_skyblock:item/uncategorized/pickonimbus_2000",
+    "tier": "EPIC",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GOBLIN_EGG",
+    "name": "Goblin Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/island_relevant/mining_3/goblins/eggs/goblin_egg",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GOBLIN_EGG_RED",
+    "name": "Red Goblin Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/island_relevant/mining_3/goblins/eggs/red_goblin_egg",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GOBLIN_EGG_BLUE",
+    "name": "Blue Goblin Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/island_relevant/mining_3/goblins/eggs/blue_goblin_egg",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GOBLIN_EGG_GREEN",
+    "name": "Green Goblin Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/island_relevant/mining_3/goblins/eggs/green_goblin_egg",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "GOBLIN_EGG_YELLOW",
+    "name": "Yellow Goblin Egg",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/island_relevant/mining_3/goblins/eggs/yellow_goblin_egg",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_RUBY_GEM",
+    "name": "Rough Ruby Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/ruby/rough_ruby_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_RUBY_GEM",
+    "name": "Flawed Ruby Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/ruby/flawed_ruby_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_RUBY_GEM",
+    "name": "Fine Ruby Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/ruby/fine_ruby_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_RUBY_GEM",
+    "name": "Flawless Ruby Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/ruby/flawless_ruby_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_RUBY_GEM",
+    "name": "Perfect Ruby Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/ruby/perfect_ruby_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "RUBY_CRYSTAL",
+    "name": "Ruby Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/ruby_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_AMBER_GEM",
+    "name": "Rough Amber Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amber/rough_amber_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_AMBER_GEM",
+    "name": "Flawed Amber Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amber/flawed_amber_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_AMBER_GEM",
+    "name": "Fine Amber Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amber/fine_amber_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_AMBER_GEM",
+    "name": "Flawless Amber Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amber/flawless_amber_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_AMBER_GEM",
+    "name": "Perfect Amber Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amber/perfect_amber_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "AMBER_CRYSTAL",
+    "name": "Amber Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/amber_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_TOPAZ_GEM",
+    "name": "Rough Topaz Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/topaz/rough_topaz_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_TOPAZ_GEM",
+    "name": "Flawed Topaz Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/topaz/flawed_topaz_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_TOPAZ_GEM",
+    "name": "Fine Topaz Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/topaz/fine_topaz_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_TOPAZ_GEM",
+    "name": "Flawless Topaz Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/topaz/flawless_topaz_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_TOPAZ_GEM",
+    "name": "Perfect Topaz Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/topaz/perfect_topaz_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "TOPAZ_CRYSTAL",
+    "name": "Topaz Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/topaz_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_JADE_GEM",
+    "name": "Rough Jade Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jade/rough_jade_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_JADE_GEM",
+    "name": "Flawed Jade Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jade/flawed_jade_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_JADE_GEM",
+    "name": "Fine Jade Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jade/fine_jade_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_JADE_GEM",
+    "name": "Flawless Jade Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jade/flawless_jade_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_JADE_GEM",
+    "name": "Perfect Jade Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jade/perfect_jade_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "JADE_CRYSTAL",
+    "name": "Jade Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/jade_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_SAPPHIRE_GEM",
+    "name": "Rough Sapphire Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/sapphire/rough_sapphire_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_SAPPHIRE_GEM",
+    "name": "Flawed Sapphire Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/sapphire/flawed_sapphire_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_SAPPHIRE_GEM",
+    "name": "Fine Sapphire Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/sapphire/fine_sapphire_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_SAPPHIRE_GEM",
+    "name": "Flawless Sapphire Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/sapphire/flawless_sapphire_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_SAPPHIRE_GEM",
+    "name": "Perfect Sapphire Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/sapphire/perfect_sapphire_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "SAPPHIRE_CRYSTAL",
+    "name": "Saphhire Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/sapphire_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_AMETHYST_GEM",
+    "name": "Rough Amethyst Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amethyst/rough_amethyst_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_AMETHYST_GEM",
+    "name": "Flawed Amethyst Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amethyst/flawed_amethyst_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_AMETHYST_GEM",
+    "name": "Fine Amethyst Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amethyst/fine_amethyst_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_AMETHYST_GEM",
+    "name": "Flawless Amethyst Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amethyst/flawless_amethyst_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_AMETHYST_GEM",
+    "name": "Perfect Amethyst Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/amethyst/perfect_amethyst_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "AMETHYST_CRYSTAL",
+    "name": "Amethyst Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/amethyst_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ROUGH_JASPER_GEM",
+    "name": "Rough Jasper Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jasper/rough_jasper_gem",
+    "tier": null,
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWED_JASPER_GEM",
+    "name": "Flawed Jasper Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jasper/flawed_jasper_gem",
+    "tier": "UNCOMMON",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FINE_JASPER_GEM",
+    "name": "Fine Jasper Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jasper/fine_jasper_gem",
+    "tier": "RARE",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "FLAWLESS_JASPER_GEM",
+    "name": "Flawless Jasper Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jasper/flawless_jasper_gem",
+    "tier": "EPIC",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "PERFECT_JASPER_GEM",
+    "name": "Perfect Jasper Gemstone",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/collections/gemstone/jasper/perfect_jasper_gem",
+    "tier": "LEGENDARY",
+    "glowing": true,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "JASPER_CRYSTAL",
+    "name": "Jasper Crystal",
+    "material": "paper",
+    "itemModel": "hypixel_skyblock:item/uncategorized/jasper_crystal",
+    "tier": "SPECIAL",
+    "glowing": false,
+    "skinValue": null,
+    "skinSignature": null
+  },
+  {
+    "id": "ENCHANTED_BOOK",
+    "name": "Enchanted Book (Lapidary I)",
+    "material": "enchanted_book",
+    "tier": "COMMON",
+    "glowing": true,
+    "enchantment": "lapidary",
+    "enchantmentLevel": 1
+  },
+  {
+    "id": "ENCHANTED_BOOK",
+    "name": "Enchanted Book (Fortune IV)",
+    "material": "enchanted_book",
+    "tier": "COMMON",
+    "glowing": true,
+    "enchantment": "fortune",
+    "enchantmentLevel": 4
+  },
+  {
+    "id": "ENCHANTED_BOOK",
+    "name": "Enchanted Book",
+    "material": "enchanted_book",
+    "tier": "COMMON",
+    "glowing": true
+  }
+]

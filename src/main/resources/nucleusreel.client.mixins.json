@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.nucleusreel.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["ChatListenerMixin", "HudMixin", "GuiGraphicsAccessor"],
+  "injectors": { "defaultRequire": 1 }
+}

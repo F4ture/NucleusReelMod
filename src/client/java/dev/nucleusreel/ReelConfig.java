@@ -14,6 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class ReelConfig {
+    // Public-edition rules are constants, not JSON settings. Legacy overrides are ignored.
+    public static final double REEL_MATCH_CHANCE = 0.25;
+    public static final double SECOND_REEL_MISS_CHANCE = 0.40;
+    public static final double THIRD_REEL_MISS_CHANCE = 0.50;
+    public static final boolean BONUS_ENABLED = true;
+    public static final double BONUS_WIN_CHANCE = 0.50;
+    public static final double BONUS_EMPTY_CHANCE = 0.50;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public boolean enabled = true;
     public boolean hideRewardChat = true;
@@ -21,12 +28,6 @@ public final class ReelConfig {
     public boolean effects = true;
     public boolean coinSounds = true;
     public double coinVolume = 0.7;
-    public double reelMatchChance = 0.25;
-    public double secondReelMissChance = 0.40;
-    public double thirdReelMissChance = 0.50;
-    public boolean bonusEnabled = true;
-    public double bonusWinChance = 0.50;
-    public double bonusEmptyChance = 0.50;
     public List<String> tripleRewards = new ArrayList<>(SlotOutcome.DEFAULT_TRIPLE_REWARDS);
     public boolean musicEnabled = false;
     public String musicTrack = "";
@@ -57,11 +58,6 @@ public final class ReelConfig {
         scale = clamp(scale, 0.5, 1.5, 1);
         musicVolume = clamp(musicVolume, 0, 1, 0.7);
         coinVolume = clamp(coinVolume, 0, 1, 0.7);
-        reelMatchChance = clamp(reelMatchChance, 0, 1, 0.25);
-        secondReelMissChance = clamp(secondReelMissChance, 0, 1, 0.40);
-        thirdReelMissChance = clamp(thirdReelMissChance, 0, 1, 0.50);
-        bonusWinChance = clamp(bonusWinChance, 0, 1, 0.50);
-        bonusEmptyChance = clamp(bonusEmptyChance, 0, 1, 0.50);
         if (tripleRewards == null) tripleRewards = new ArrayList<>(SlotOutcome.DEFAULT_TRIPLE_REWARDS);
         else {
             tripleRewards = new ArrayList<>(tripleRewards);

@@ -106,30 +106,53 @@ public final class AppearanceAudioTest {
             check(sound.isStopped(), "Coin effect can be stopped on skip/disconnect");
         }
         config.coinVolume = Double.POSITIVE_INFINITY;
-        config.reelMatchChance = Double.NaN;
-        config.secondReelMissChance = Double.NaN;
-        config.thirdReelMissChance = Double.POSITIVE_INFINITY;
         config.musicVolume = Double.NaN;
         config.musicTrack = null;
         config.sanitize();
         check(config.musicVolume == 0.7 && config.musicTrack.equals(""), "Invalid music settings recovered");
-        check(config.coinVolume == 0.7 && config.reelMatchChance == 0.25, "Invalid coin and reel settings recovered");
-        check(config.secondReelMissChance == 0.4 && config.thirdReelMissChance == 0.5, "Invalid conditional probabilities recovered");
+        check(config.coinVolume == 0.7, "Invalid coin volume recovered");
         ReelConfig migrated = new com.google.gson.Gson().fromJson("{\"musicEnabled\":true,\"musicTrack\":\"song.ogg\",\"reelMatchChance\":1,\"nearMissChance\":0.3}", ReelConfig.class);
         migrated.sanitize();
         check(migrated.tripleRewards.equals(dev.nucleusreel.core.SlotOutcome.DEFAULT_TRIPLE_REWARDS), "Old config gains the default rare reward list");
         check(migrated.musicEnabled && migrated.musicTrack.equals("song.ogg"), "Old music selection preserved");
-        check(migrated.secondReelMissChance == 0.4 && migrated.thirdReelMissChance == 0.5, "Old config gains 40% / conditional 50% chances");
-        ReelConfig saved = new com.google.gson.Gson().fromJson("{\"secondReelMissChance\":0.2,\"thirdReelMissChance\":0.8}", ReelConfig.class);
-        saved.sanitize();
-        check(saved.secondReelMissChance == 0.2 && saved.thirdReelMissChance == 0.8, "Explicit conditional chances survive reload");
-        check(migrated.bonusEnabled && migrated.bonusWinChance == 0.5 && migrated.bonusEmptyChance == 0.5, "Old config gains both 50% bonus probabilities");
-        migrated.bonusWinChance = Double.NaN; migrated.bonusEmptyChance = -1; migrated.sanitize();
-        check(migrated.bonusWinChance == 0.5 && migrated.bonusEmptyChance == 0, "Bonus probabilities sanitize");
+        checkFixedPublicSettings();
         var meow = net.minecraft.sounds.SoundEvents.CAT_SOUNDS
             .get(net.minecraft.world.entity.animal.feline.CatSoundVariants.SoundSet.CLASSIC).adultSounds().ambientSound().value();
         check(meow != null, "Minecraft 26.1.2 classic cat meow exists");
         System.out.println("Passed " + checks + " catalog / item appearance / audio checks without a player or inventory.");
+    }
+    private static void checkFixedPublicSettings() {
+        var gson = new com.google.gson.Gson();
+        var lockedKeys = java.util.List.of("reelMatchChance", "secondReelMissChance", "thirdReelMissChance",
+            "bonusWinChance", "bonusEmptyChance", "nearMissChance", "REEL_MATCH_CHANCE", "SECOND_REEL_MISS_CHANCE",
+            "THIRD_REEL_MISS_CHANCE", "BONUS_WIN_CHANCE", "BONUS_EMPTY_CHANCE");
+        for (double override : new double[] {0, 0.2, 0.8, 1}) {
+            var old = new com.google.gson.JsonObject();
+            for (String key : lockedKeys) old.addProperty(key, override);
+            old.addProperty("bonusEnabled", false);
+            old.addProperty("BONUS_ENABLED", false);
+            old.addProperty("musicEnabled", true);
+            old.addProperty("musicTrack", "My song.ogg");
+            old.addProperty("musicVolume", 0.35);
+            old.addProperty("scale", 1.2);
+            old.addProperty("durationSeconds", 9);
+            old.addProperty("effects", false);
+            ReelConfig loaded = gson.fromJson(old, ReelConfig.class);
+            loaded.sanitize();
+            check(ReelConfig.REEL_MATCH_CHANCE == 0.25 && ReelConfig.SECOND_REEL_MISS_CHANCE == 0.4
+                && ReelConfig.THIRD_REEL_MISS_CHANCE == 0.5, "Legacy chance overrides cannot change public reel rules");
+            check(ReelConfig.BONUS_ENABLED && ReelConfig.BONUS_WIN_CHANCE == 0.5 && ReelConfig.BONUS_EMPTY_CHANCE == 0.5,
+                "Legacy bonus-disable and chance overrides cannot change public bonus rules");
+            var serialized = gson.toJsonTree(loaded).getAsJsonObject();
+            for (String key : lockedKeys) check(!serialized.has(key), "Locked rule is not written as a setting: " + key);
+            check(!serialized.has("bonusEnabled") && !serialized.has("BONUS_ENABLED"), "Bonus toggle is not written as a setting");
+            ReelConfig reloaded = gson.fromJson(serialized, ReelConfig.class);
+            reloaded.sanitize();
+            check(reloaded.musicEnabled && reloaded.musicTrack.equals("My song.ogg") && reloaded.musicVolume == 0.35,
+                "Music settings survive public migration and round trip");
+            check(reloaded.scale == 1.2 && reloaded.durationSeconds == 9 && !reloaded.effects,
+                "Presentation settings survive public migration and round trip");
+        }
     }
     private static byte[] bytes(ByteBuffer buffer) { byte[] bytes = new byte[buffer.remaining()]; buffer.get(bytes); return bytes; }
 }

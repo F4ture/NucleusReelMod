@@ -4,7 +4,6 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import dev.nucleusreel.core.LootParser;
 import dev.nucleusreel.core.Reward;
@@ -79,18 +78,6 @@ public final class NucleusReelClient implements ClientModInitializer {
                 .then(literal("status").executes(ctx -> status()))
                 .then(literal("on").executes(ctx -> flag("enabled", true)))
                 .then(literal("off").executes(ctx -> flag("enabled", false)))
-                .then(literal("bonus").executes(ctx -> status())
-                    .then(literal("on").executes(ctx -> flag("bonus", true)))
-                    .then(literal("off").executes(ctx -> flag("bonus", false))))
-                .then(literal("chance").executes(ctx -> status())
-                    .then(literal("second").then(argument("percent", IntegerArgumentType.integer(0, 100))
-                        .executes(ctx -> chance("second", IntegerArgumentType.getInteger(ctx, "percent")))))
-                    .then(literal("third").then(argument("percent", IntegerArgumentType.integer(0, 100))
-                        .executes(ctx -> chance("third", IntegerArgumentType.getInteger(ctx, "percent")))))
-                    .then(literal("bonus-win").then(argument("percent", IntegerArgumentType.integer(0, 100))
-                        .executes(ctx -> chance("bonus-win", IntegerArgumentType.getInteger(ctx, "percent")))))
-                    .then(literal("bonus-empty").then(argument("percent", IntegerArgumentType.integer(0, 100))
-                        .executes(ctx -> chance("bonus-empty", IntegerArgumentType.getInteger(ctx, "percent"))))))
                 .then(literal("skip").executes(ctx -> { reset(); return 1; }))
                 .then(literal("toggle").executes(ctx -> {
                     reset(); config.enabled = !config.enabled; save();
@@ -103,14 +90,6 @@ public final class NucleusReelClient implements ClientModInitializer {
                 .then(literal("scale").then(argument("size", DoubleArgumentType.doubleArg(0.5, 1.5)).executes(ctx -> {
                     config.scale = DoubleArgumentType.getDouble(ctx, "size"); save();
                     say("Scale: " + config.scale); return 1;
-                })))
-                .then(literal("secondchance").then(argument("chance", DoubleArgumentType.doubleArg(0, 1)).executes(ctx -> {
-                    config.secondReelMissChance = DoubleArgumentType.getDouble(ctx, "chance"); save();
-                    say("Second-reel miss: " + Math.round(config.secondReelMissChance * 100) + "% of ordinary rewards"); return 1;
-                })))
-                .then(literal("misschance").then(argument("chance", DoubleArgumentType.doubleArg(0, 1)).executes(ctx -> {
-                    config.thirdReelMissChance = DoubleArgumentType.getDouble(ctx, "chance"); save();
-                    say("Third-reel miss: " + Math.round(config.thirdReelMissChance * 100) + "% after the second reel passes"); return 1;
                 })))
                 .then(literal("sound")
                     .then(literal("on").executes(ctx -> flag("sound", true)))
@@ -170,37 +149,22 @@ public final class NucleusReelClient implements ClientModInitializer {
     }
 
     private int help() {
-        say("/nr bonus on|off — enable or disable bonus scenes");
-        say("/nr chance second|third|bonus-win|bonus-empty <0–100> — chances in percent");
         say("/nr on|off | skip | status | reload — enable, disable, skip, or manage settings");
         say("/nr duration <1–15> | scale <0.5–1.5> — animation duration and size");
         say("/nr sound|effects|coins|hidechat on|off | coinvolume <0–1>");
         say("/nr music folder|list|track <file.ogg>|volume <0–1>|on|off");
-        say("The full /nucleusreel command and legacy commands still work. Press Tab for suggestions.");
+        say("Both /nr and /nucleusreel are supported. Press Tab for suggestions.");
         return 1;
     }
 
     private int status() {
-        say("Mod: " + (config.enabled ? "ON" : "OFF") + "; bonus scenes: " + (config.bonusEnabled ? "ON" : "OFF"));
-        say("Second-reel miss: " + Math.round(config.secondReelMissChance * 100) + "%; third-reel miss after the second reel matches: " + Math.round(config.thirdReelMissChance * 100) + "%.");
-        say("Bonus with Alloy: " + Math.round(config.bonusWinChance * 100) + "%; empty bonus after a third-reel miss: " + Math.round(config.bonusEmptyChance * 100) + "%.");
+        say("Mod: " + (config.enabled ? "ON" : "OFF") + "; bonus scenes: ON");
+        say("Animation chances use fixed defaults in the public edition.");
         return 1;
-    }
-    private int chance(String option, int percent) {
-        double value = percent / 100.0;
-        switch (option) {
-            case "second" -> config.secondReelMissChance = value;
-            case "third" -> config.thirdReelMissChance = value;
-            case "bonus-win" -> config.bonusWinChance = value;
-            case "bonus-empty" -> config.bonusEmptyChance = value;
-            default -> throw new IllegalArgumentException(option);
-        }
-        save(); return status();
     }
     private int flag(String option, boolean enabled) {
         switch (option) {
             case "enabled" -> { reset(); config.enabled = enabled; }
-            case "bonus" -> config.bonusEnabled = enabled;
             case "sound" -> config.sound = enabled;
             case "effects" -> config.effects = enabled;
             case "coins" -> config.coinSounds = enabled;

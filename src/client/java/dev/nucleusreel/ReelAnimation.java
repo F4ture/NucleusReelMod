@@ -79,12 +79,12 @@ public final class ReelAnimation {
         this.config = config;
         hold = (int) Math.round(config.resultSeconds * 20);
         Random random = new Random();
-        SlotOutcome original = SlotOutcome.create(winner, RewardCatalog.PREVIEW_REWARDS, config.reelMatchChance,
+        SlotOutcome original = SlotOutcome.create(winner, RewardCatalog.PREVIEW_REWARDS, ReelConfig.REEL_MATCH_CHANCE,
             forceFailedReel >= 0 ? SlotOutcome.DEFAULT_TRIPLE_REWARDS : config.tripleRewards,
-            forceFailedReel != -1 ? forceFailedReel == 1 ? 1 : 0 : config.secondReelMissChance,
-            forceFailedReel != -1 ? forceFailedReel == 2 ? 1 : 0 : config.thirdReelMissChance, random);
-        bonus = BonusPlan.choose(winner, actualOrdinary, original, config.tripleRewards, config.bonusEnabled,
-            config.bonusWinChance, config.bonusEmptyChance, preview, random);
+            forceFailedReel != -1 ? forceFailedReel == 1 ? 1 : 0 : ReelConfig.SECOND_REEL_MISS_CHANCE,
+            forceFailedReel != -1 ? forceFailedReel == 2 ? 1 : 0 : ReelConfig.THIRD_REEL_MISS_CHANCE, random);
+        bonus = BonusPlan.choose(winner, actualOrdinary, original, config.tripleRewards, ReelConfig.BONUS_ENABLED,
+            ReelConfig.BONUS_WIN_CHANCE, ReelConfig.BONUS_EMPTY_CHANCE, preview, random);
         mining = bonus.active() ? new MiningTransition() : null;
         outcome = bonus.reels();
         celebration = bonus.active() ? RewardCelebration.NORMAL : RewardCelebration.forReward(winner);

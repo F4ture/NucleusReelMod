@@ -2,7 +2,7 @@
 
 A client-side Fabric mod that turns **Hypixel SkyBlock Crystal Nucleus** rewards into a mining-themed three-reel animation.
 
-**Minecraft 26.1.2 · Fabric · English interface · Public Edition 0.10.2**
+**Minecraft 26.1.2 · Fabric · English interface · Public Edition 0.10.3**
 
 ## Features
 
@@ -11,14 +11,16 @@ A client-side Fabric mod that turns **Hypixel SkyBlock Crystal Nucleus** rewards
 - An interactive bonus cave with three tunnels, the player's skin, mining effects and ambient sounds.
 - SkyBlock item appearances from the active resource pack, even when the items are not in the player's inventory.
 - Custom reel music using local OGG Vorbis or PCM WAV tracks.
-- Configurable size, duration, sounds, effects and animation chances.
+- Configurable size, duration, sounds and effects.
 
 The animations are cosmetic. They display actual server rewards and do not create items or alter Hypixel drop chances. The public edition has no commands for previewing or forcing scenes.
+
+Animation chances use fixed defaults: 40% for a second-reel miss, 50% for a third-reel miss after the second matches, and 50% for each eligible bonus scenario. Bonus scenes are enabled. Chance overrides and bonus-disable settings from older configuration files are ignored; music, size, duration and other ordinary settings are preserved.
 
 ## Installation
 
 1. Install **Minecraft 26.1.2**, **Java 25**, **Fabric Loader 0.19.3 or newer**, and **Fabric API 0.155.2+26.1.2 or newer for Minecraft 26.1.2**.
-2. Download `nucleus-reel-0.10.2+26.1.2-public.jar` from [Releases](https://github.com/F4ture/NucleusReelMod/releases).
+2. Download `nucleus-reel-0.10.3+26.1.2-public.jar` from [Releases](https://github.com/F4ture/NucleusReelMod/releases).
 3. Remove older Nucleus Reel JARs from your profile's `mods` folder, add the new JAR, and restart Minecraft.
 4. Use `/nr help` for settings. Reels start automatically after a supported Crystal Nucleus loot bundle on Hypixel SkyBlock.
 
@@ -31,11 +33,10 @@ Existing settings in `config/nucleus-reel.json` and custom music files are prese
 | Command | Purpose |
 | --- | --- |
 | `/nr help` | Show available commands |
-| `/nr status` | Show settings and configured chances |
+| `/nr status` | Show mod status |
 | `/nr on`, `/nr off`, `/nr toggle` | Enable or disable the mod |
 | `/nr skip` | Close the current animation and release deferred reward messages |
 | `/nr reload` | Reload saved settings |
-| `/nr bonus on\|off` | Enable or disable bonus scenes |
 | `/nr duration <1–15>` | Base reel duration in seconds |
 | `/nr scale <0.5–1.5>` | Reel size |
 | `/nr sound on\|off` | Animation sounds |
@@ -43,14 +44,13 @@ Existing settings in `config/nucleus-reel.json` and custom music files are prese
 | `/nr coins on\|off` | Coin sounds |
 | `/nr coinvolume <0–1>` | Coin volume |
 | `/nr hidechat on\|off` | Defer reward messages until the reveal |
-| `/nr chance second\|third\|bonus-win\|bonus-empty <0–100>` | Cosmetic animation chances |
 | `/nr music folder`, `/nr music list` | Open the music folder or list tracks |
 | `/nr music track <filename>` | Select an OGG Vorbis or PCM WAV track |
 | `/nr music on\|off`, `/nr music volume <0–1>` | Music playback and volume |
 
-Filenames may contain spaces. Minecraft's Music volume must be above zero for custom reel music. Changing an animation chance does not start a reel or change server rewards.
+Filenames may contain spaces. Minecraft's Music volume must be above zero for custom reel music.
 
-Legacy settings aliases remain available: `secondchance <0–1>`, `misschance <0–1>` and boolean forms such as `sound true`.
+Boolean forms such as `sound true` remain available. Chance-changing commands, their legacy aliases and the bonus toggle are not available in the public edition.
 
 ## Resource packs
 
@@ -72,9 +72,9 @@ Linux/macOS:
 ./gradlew build
 ```
 
-Output: `build/libs/nucleus-reel-0.10.2+26.1.2-public.jar`.
+Output: `build/libs/nucleus-reel-0.10.3+26.1.2-public.jar`.
 
-The build runs reward parsing, item appearance, audio, reel outcome, animation timing and command checks. The command checks verify that preview commands are unavailable under both aliases and absent from Tab suggestions. Test runners are not included in the mod JAR.
+The build runs reward parsing, item appearance, audio, reel outcome, animation timing and command checks. Checks cover rejection of preview, chance-changing and bonus-toggle commands under both aliases and in Tab suggestions, plus migration of old settings to fixed public-edition rules. Test runners are not included in the mod JAR.
 
 ## Credits and license
 
